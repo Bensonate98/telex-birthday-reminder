@@ -13,6 +13,7 @@ const integrationSpecSettings = {
     },
     "integration_category": "Monitoring & Logging",
     "integration_type": "interval",
+    // "target_url": `${baseUrl}/tick`,
     "is_active": true,
     "output": [
       {
@@ -53,7 +54,7 @@ const integrationSpecSettings = {
       //   "default": "🎉 Happy Birthday, {name}! 🎂"
       // }
     ],
-    "tick_url": "https://tft7wd0n-3000.uks1.devtunnels.ms/api/v1/check-birthdays",
+    "tick_url": "https://telex-birthday-reminder.vercel.app/check-birthdays"
   }
 }
 
