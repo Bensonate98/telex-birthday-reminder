@@ -17,7 +17,7 @@ const integrationSpecSettings = {
     "is_active": true,
     "output": [
       {
-        "label": "output_channel_1",
+        "label": "bensonate-channel-0",
         "value": true
       }
     ],

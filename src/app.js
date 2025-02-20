@@ -27,10 +27,7 @@ const birthdayList = [
 
 // Tick url
 app.post("/tick", (req, res)=>{
-  const { settings, return_url } = req.body;
-  console.log(`settings: ${settings}`, `return_url: ${return_url}`);
-  const data = req.body;
-  console.log(data);
+  // const { settings, return_url } = req.body;
   const today = moment().format("MM-DD");
 
   const birthdaysToday = birthdayList.filter((person)=>{
