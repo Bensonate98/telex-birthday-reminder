@@ -4,6 +4,9 @@ import integrationSpecSettings from "./settings.js";
 const app = express();
 const PORT = 3000;
 
+//middleware
+app.use(express.json());
+
 app.get("/", (req, res)=>{
   res.send("Hello Integration World");
 });
@@ -23,7 +26,9 @@ const birthdayList = [
 // Tick url
 app.post("/tick", (req, res)=>{
   const { settings, return_url } = req.body;
-  console.log(settings, return_url);
+  console.log(`settings: ${settings}`, `return_url: ${return_url}`);
+  const data = req.body;
+  console.log(data);
   const today = moment().format("MM-DD");
 
   const birthdaysToday = birthdayList.filter((person)=>{
@@ -33,7 +38,7 @@ app.post("/tick", (req, res)=>{
   
   if(birthdaysToday.length > 0){
     const message = birthdaysToday.map(person=>`Hurray!🎉 It's ${person.name}'s birthday. Happy birthday ${person.name}, May God bless and keep you.`)
-    return res.status(200).json({message});
+    return res.status(202).json({message});
   }
   return res.json({ messages: [] });
 })

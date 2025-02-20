@@ -15,6 +15,12 @@ const integrationSpecSettings = {
     "integration_type": "interval",
     "target_url": "",
     "is_active": true,
+    "output": [
+      {
+        "label": "output_channel_1",
+        "value": true
+      }
+    ],
     "key_features": [
       "Daily birthday reminders at a set time.",
       "Customizable messages.",
