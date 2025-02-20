@@ -37,7 +37,7 @@ app.post("/tick", (req, res)=>{
   
   if(birthdaysToday.length > 0){
     const message = birthdaysToday.map(person=>`Hurray!🎉 It's ${person.name}'s birthday. Happy birthday ${person.name}, May God bless and keep you.`)
-    return res.status(202).json({message});
+    return res.status(202).json({status: "accepted", message});
   }
   return res.json({ messages: [] });
 })
