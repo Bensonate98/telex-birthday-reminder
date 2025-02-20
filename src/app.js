@@ -21,9 +21,9 @@ const birthdayList = [
 ];
 
 // Tick url
-app.post("/check-birthdays", (req, res)=>{
-  const {channel_id, settings } = req.body;
-  console.log(channel_id, settings);
+app.post("/tick", (req, res)=>{
+  const { settings, return_url } = req.body;
+  console.log(settings, return_url);
   const today = moment().format("MM-DD");
 
   const birthdaysToday = birthdayList.filter((person)=>{

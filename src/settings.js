@@ -15,46 +15,20 @@ const integrationSpecSettings = {
     "integration_type": "interval",
     "target_url": "",
     "is_active": true,
-    "output": [
-      {
-        "label": "bensonate-channel-0",
-        "value": true
-      }
-    ],
     "key_features": [
       "Daily birthday reminders at a set time.",
       "Customizable messages.",
       "Keeps team engagement high."
     ],
-    "permissions": {
-      "monitoring_user": {
-        "always_online": true,
-        "display_name": "Birthday Bot"
-      }
-    },
     "settings": [
       {
         "label": "interval",
         "type": "text",
-        "required": true,
         "default": "* * * * *",
         "required": true
-      },
-      // {
-      //   "label": "Birthday list",
-      //   "type": "text",
-      //   "description": "Enter the API URL or database endpoint where birthdays are stored.",
-      //   "default": "//////",
-      //   "required": true
-      // },
-      // {
-      //   "label": "Message Message",
-      //   "description": "Custom message format (use {name} for dynamic names).",
-      //   "required": true,
-      //   "default": "🎉 Happy Birthday, {name}! 🎂"
-      // }
+      }
     ],
-    "tick_url": "https://telex-birthday-reminder.vercel.app/check-birthdays"
+    "tick_url": "https://telex-birthday-reminder.vercel.app/tick"
   }
 }
 
