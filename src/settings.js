@@ -7,7 +7,7 @@ const integrationSpecSettings = {
     "descriptions": {
       "app_description": "Birthday Reminder notifies your team about upcoming birthdays every morning.",
       "app_logo": "https://img.freepik.com/free-psd/yellow-gift-with-golden-ribbon-icon-sign-symbol-3d-background-illustration_56104-2422.jpg",
-      "app_name": "BirthdayMinder",
+      "app_name": "Birthday Reminder",
       "app_url": "https://telex-birthday-reminder.vercel.app",
       "background_color": "#fff"
     },
