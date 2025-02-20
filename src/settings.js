@@ -2,7 +2,7 @@ const integrationSpecSettings = {
   "data": {
     "date": {
       "created_at": "2025-02-19",
-      "updated_at": "2025-02-19S"
+      "updated_at": "2025-02-19"
     },
     "descriptions": {
       "app_description": "Birthday Reminder notifies your team about upcoming birthdays every morning.",
@@ -37,7 +37,7 @@ const integrationSpecSettings = {
         "label": "interval",
         "type": "text",
         "required": true,
-        "default": "0 8 * * *",
+        "default": "* * * * *",
         "required": true
       },
       // {
