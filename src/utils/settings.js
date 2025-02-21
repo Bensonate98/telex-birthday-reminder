@@ -31,7 +31,7 @@ const integrationSpecSettings = {
       {
         "label": "interval",
         "type": "text",
-        "default": "* * * * *",
+        "default": "*/5 * * * *	",
         "required": true
       }
     ],
