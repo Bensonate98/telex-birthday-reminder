@@ -15,6 +15,7 @@ const integrationSpecSettings = {
     "integration_type": "interval",
     "target_url": "",
     "is_active": true,
+    "author": "Benson Christopher Emuzo",
     "output": [
       {
         "label": "bensonate-channel-0",
@@ -22,8 +23,8 @@ const integrationSpecSettings = {
       }
     ],
     "key_features": [
-      "Daily birthday reminders at a set time.",
-      "Customizable messages.",
+      "Birthday messages for team members",
+      "Customizable birthday messages.",
       "Keeps team engagement high."
     ],
     "settings": [
@@ -34,7 +35,7 @@ const integrationSpecSettings = {
         "required": true
       }
     ],
-    "tick_url": "https://telex-birthday-reminder.vercel.app/tick"
+    "tick_url": "https://telex-birthday-reminder.vercel.app/check-birthdays"
   }
 }
 
