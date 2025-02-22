@@ -11,10 +11,11 @@ export const integrationJsonContrl = (req, res)=>{
 export const checkBirthdaysForTelex = async (req, res)=>{
   try{
     const { settings, return_url } = req.body;
+    const birthdayList = await Users.find(); 
     const today = moment().format("MM-DD");
 
     const birthdaysToday = birthdayList.filter((person)=>{
-      const birthday = moment(person.dateOfbirth, "YYY-MM-DD").format("MM-DD");
+      const birthday = moment(person.dateOfBirth, "YYY-MM-DD").format("MM-DD");
       return birthday === today;
     })
     
