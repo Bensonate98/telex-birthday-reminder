@@ -1,4 +1,4 @@
-export const integrationSpecSettings = {
+ const integrationSpecSettings = {
   "data": {
     "date": {
       "created_at": "2025-02-19",
@@ -33,36 +33,5 @@ export const integrationSpecSettings = {
   }
 }
 
-export const birthSaverJsonSettings = {
-    "data": {
-      "date": {
-        "created_at": "2025-02-22",
-        "updated_at": "2025-02-22"
-      },
-      "descriptions": {
-        "app_description": "Birth Saver Saves your birthday so that Birthday Reminder can celebrate you.",
-        "app_logo": "https://img.freepik.com/free-vector/shield-shape-recycle-arrows_78370-5590.jpg",
-        "app_name": "Birth-Saver bot",
-        "app_url": "https://telex-birthday-reminder.vercel.app",
-        "background_color": "#fff"
-      },
-      "integration_category": "Monitoring & Logging",
-      "integration_type": "modifier",
-      "is_active": true,
-      "key_features": [
-        "Saves your team members names and birthdays by entering the command below:",
-        "/add-birthday <username> <YYYY-MM-DD>",
-        "e.g /add-birthday Bensonate 1999-10-23",
-        "And click send. Voila you are good to go!"
-      ],
-      "settings": [
-        {
-          "label": "Provide Speed",
-          "type": "number",
-          "required": true,
-          "default": "1000"
-        }
-      ],
-      "target_url": "https://telex-birthday-reminder.vercel.app/save-user"
-    }
-}
+export default integrationSpecSettings;
+

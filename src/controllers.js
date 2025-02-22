@@ -1,7 +1,6 @@
 import moment from "moment";
 import { sendToChannel } from "./utils/feedback.js";
-import { integrationSpecSettings, birthSaverJsonSettings } from "./utils/settings.js";
-import { isValidBirthdaySaverCommand } from "./utils/validate.js";
+import integrationSpecSettings from "./utils/settings.js";
 import Users from "./model/users.js";
 
 
@@ -52,25 +51,14 @@ export const getAllUsers = async (req, res)=>{
 
 export const createUser = async (req, res)=>{
   try{
-    const { channel_id, message } = req.body;
-    console.log(channel_id, message);
-    if(isValidBirthdaySaverCommand(message)){
-      const part =  message.split(" ");
-      const requiredData = part.slice(1, 3);
-      const userData = {
-        name: requiredData[0],
-        dateOfBirth: requiredData[1]
-      }
-      const newUser = await Users.create(userData);
-      return res.status(200).json({
-        "event_name": "Data saved",
-        "message": "Your name and birthday has been saved successfully. Cheers!",
-        "status": "success",
-        "username": "Birth-Saver bot"
-      });
+    const { name, dateOfBirth } = req.body;
+    if(!name || !dateOfBirth){
+      res.status(400).json({status: "error", message: "input fields required"});
     }
+    const newUser = await Users.create({name, dateOfBirth});
+    return res.status(200).json({status: "sucess", message: "user created sucessfully", data: newUser});
   }
   catch(err){
-    console.log(err)
+    return res.status(500).json({status: "error", message: "Internal server error", data: newUser});
   }
 }
