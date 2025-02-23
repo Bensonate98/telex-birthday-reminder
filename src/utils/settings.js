@@ -17,9 +17,9 @@
     "is_active": true,
     "author": "Benson Christopher Emuzo",
     "key_features": [
-      "*How to use Birthday Reminder*",
-      "Ensure your team members fill in their names and birthdays using this link: https://birthday-saver.vercel.app/",
-      "Activate Birthday Reminder on your channel and configure the set interval you prefer. Default is 6am"
+      "Automated birthday messages",
+      "Interval-Based Execution",
+      "Keeps team members engaged"
     ],
     "settings": [
       {
