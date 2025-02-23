@@ -23,7 +23,7 @@ The **Telex Birthday Reminder** is an integration that sends automated birthday 
 
 ```sh
 # Clone the repository
-git clone https://github.com/your-username/telex-birthday-reminder.git
+git clone https://github.com/bensonate98/telex-birthday-reminder.git
 cd telex-birthday-reminder
 
 # Install dependencies
@@ -35,10 +35,8 @@ npm install
 1. **Create a **``** file** in the root directory and add the following:
 
 ```ini
-PORT=8000
+PORT=3000
 MONGO_URI=mongodb+srv://your-db-credentials
-TELEX_BOT_TOKEN=your-telex-bot-token
-TELEX_CHANNEL_ID=your-telex-channel-id
 ```
 
 2. **Update **`` if needed.
@@ -46,10 +44,10 @@ TELEX_CHANNEL_ID=your-telex-channel-id
 ### 4️⃣ Running the Integration Locally
 
 ```sh
-npm start
+npm run dev
 ```
 
-Your server should now be running on `http://localhost:8000`.
+Your server should now be running on `http://localhost:3000`.
 
 ### 5️⃣ Testing the Integration
 
@@ -62,7 +60,7 @@ curl --location 'http://localhost:8000/tick' \
     "channel_id": "<your-telex-channel-id>",
     "return_url": "https://ping.telex.im/v1/return/<your-telex-channel-id>",
     "settings": [
-        { "label": "interval", "type": "text", "required": true, "default": "0 9 * * *" }
+        { "label": "interval", "type": "text", "required": true, "default": "0 6 * * *" }
     ]
 }'
 ```
@@ -70,14 +68,14 @@ curl --location 'http://localhost:8000/tick' \
 #### ➤ Using Postman
 
 1. Open **Postman**
-2. Create a `POST` request to `http://localhost:8000/tick`
+2. Create a `POST` request to `http://localhost:8000/check-birthdays`
 3. Add the following JSON body:
 
 ```json
 {
   "channel_id": "<your-telex-channel-id>",
   "return_url": "https://ping.telex.im/v1/return/<your-telex-channel-id>",
-  "settings": [{ "label": "interval", "type": "text", "default": "0 9 * * *" }]
+  "settings": [{ "label": "interval", "type": "text", "default": "0 6 * * *" }]
 }
 ```
 
@@ -91,44 +89,27 @@ curl --location 'http://localhost:8000/tick' \
 vercel
 ```
 
-#### ➤ Deploy to **AWS EC2**
 
-```sh
-# SSH into your instance
-ssh ubuntu@your-ec2-instance-ip
+### 7️⃣ Setting Up Telex Integration and Testing it online
 
-# Clone the repository
-git clone https://github.com/your-username/telex-birthday-reminder.git
-cd telex-birthday-reminder
-
-# Install dependencies and start the server
-npm install
-pm start
-```
-
-### 7️⃣ Setting Up Telex Integration
-
-1. Go to **Telex Dashboard** > **Integrations**
-2. Click **Create Integration**
-3. Use `https://your-deployment-url.com/tick` as the **target URL**
-4. Set the **interval** (e.g., `0 9 * * *` for daily 9 AM reminders)
+1. Go to **Telex Dashboard** > **Apps**
+2. Click **Add New**
+3. Use `https://telex-birthday-reminder.vercel.app/integration.json` as the **JSON URL**
+4. Go to settings and set the **interval** (e.g., `0 6 * * *` for daily 9 AM reminders) or (e.g., `*/5 * * * *` for every 5 minutes incase you want it faster)
 5. Save and activate the integration
+6. Make sure every member of your team submit their names and birthdays using this link `https://birthday-saver.vercel.app/`
+7. Please make sure you don't skip step 6 above. I advice you do that before any other thing. Telex needs those details to iterate and know when there's a birthday match
+8. if all the above is properly done. Telex will check the database to see if there are any birthday match. If there are, Telex will send a message to the channel. Screenshots of telex-birthday reminder working are shown below: 
 
 ## 📸 Screenshots
 
 ### 🎉 Birthday Reminder in Action
 
-(Screenshot of the Telex Channel with a reminder message)
+![Birthday Reminder](assets/evidence1.png)
+![Birthday Reminder](assets/evidence2.png)
 
-## 📌 Contributors
 
-- **Your Name** ([@your-github](https://github.com/your-github))
 
-## 📝 License
-
-This project is licensed under the **MIT License**.
-
----
 
 💡 *Feel free to contribute and improve this integration!* 🚀
 
