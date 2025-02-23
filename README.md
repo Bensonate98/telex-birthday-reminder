@@ -36,7 +36,7 @@ npm install
 
 ```ini
 PORT=3000
-MONGO_URI=mongodb+srv://your-db-credentials
+DB_URI=mongodb+srv://your-db-credentials
 ```
 
 2. **Update **`` if needed.
@@ -54,7 +54,7 @@ Your server should now be running on `http://localhost:3000`.
 #### ➤ Using Curl
 
 ```sh
-curl --location 'http://localhost:8000/tick' \
+curl --location 'http://localhost:3000/check-birthdays' \
 --header 'Content-Type: application/json' \
 --data '{
     "channel_id": "<your-telex-channel-id>",
@@ -68,7 +68,7 @@ curl --location 'http://localhost:8000/tick' \
 #### ➤ Using Postman
 
 1. Open **Postman**
-2. Create a `POST` request to `http://localhost:8000/check-birthdays`
+2. Create a `POST` request to `http://localhost:3000/check-birthdays`
 3. Add the following JSON body:
 
 ```json
@@ -106,6 +106,7 @@ vercel
 ### 🎉 Birthday Reminder in Action
 
 ![Birthday Reminder](assets/evidence1.png)
+
 ![Birthday Reminder](assets/evidence2.png)
 
 
