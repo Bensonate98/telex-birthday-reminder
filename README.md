@@ -99,15 +99,13 @@ vercel
 5. Save and activate the integration
 6. Make sure every member of your team submit their names and birthdays using this link `https://birthday-saver.vercel.app/`
 7. Please make sure you don't skip step 6 above. I advice you do that before any other thing. Telex needs those details to iterate and know when there's a birthday match
-8. if all the above is properly done. Telex will check the database to see if there are any birthday match. If there are, Telex will send a message to the channel. Screenshots of telex-birthday reminder working are shown below: 
+8. If all the above is properly done. Telex will check the database to see if there are any birthday match. If there are, Telex will send a message to the channel. Screenshots of telex-birthday reminder working are shown below: 
 
 ## 📸 Screenshots
 
 ### 🎉 Birthday Reminder in Action
 
 ![Birthday Reminder](assets/evidence1.png)
-
-![Birthday Reminder](assets/evidence2.png)
 
 
 
