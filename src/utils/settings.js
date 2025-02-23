@@ -25,7 +25,7 @@
       {
         "label": "interval",
         "type": "text",
-        "default": "*/5 * * * *",
+        "default": "0 6 * * *",
         "required": true
       }
     ],
