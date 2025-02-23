@@ -96,14 +96,14 @@ vercel
 3. Use `https://telex-birthday-reminder.vercel.app/integration.json` as the **JSON URL**
 4. Go to settings and set the **interval** (e.g., `0 6 * * *` for daily 6AM reminders) or (e.g., `*/5 * * * *` for every 5 minutes incase you want it faster)
 5. Save and activate the integration
-6. Make sure every member of your team submit their names and birthdays using this link `https://birthday-saver.vercel.app/`
+6. Make sure every member of your team submit their names and birthdays using this link <https://birthday-saver.vercel.app/>
 7. Please make sure you don't skip step 6 above. I advice you do that before any other thing. Telex needs those details to iterate and know when there's a birthday match
 8. If all the above is properly done. Telex will check the database to see if there are any birthday match. If there are, Telex will send a message to the channel. Screenshots of telex-birthday reminder working are shown below: 
 
 ### 8️⃣ How to use Telex Birthday Reminder
 
 Lolz.. I know I've told you before but I want it to stick😊
-1. Ensure your team members fill in their names and birthdays using this link: `https://birthday-saver.vercel.app/`. Note: the birthdate must be in the format "YYY-MM-DD".
+1. Ensure your team members fill in their names and birthdays using this link: <https://birthday-saver.vercel.app/>. Note: the birthdate must be in the format "YYY-MM-DD".
 2. Activate Birthday Reminder on your channel and configure the set interval you prefer. Default is 6am, you can set it to every 5minutes to see its effect fast enough. Note the set interval must be set using cron-tab format.
 
 ## 📸 Screenshots
