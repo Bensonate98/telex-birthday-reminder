@@ -11,6 +11,16 @@ export const integrationJsonContrl = (req, res)=>{
 export const checkBirthdaysForTelex = async (req, res)=>{
   try{
     const { settings, return_url } = req.body;
+    if(!settings || !return_url){
+      return res.status(400).json({error: "Invalid input"})
+    }
+    const allowedCronPattern = /^0 ([0-9]|1[0-9]|2[0-3]) \* \* \*$/;
+    const userInterval = settings.find(s => s.label === "interval")?.default;
+    if (!userInterval || !allowedCronPattern.test(userInterval)){
+      return res.status(400).json({ 
+        error: "Invalid interval! Please set a time for once per day (e.g., '0 6 * * *')."
+      });
+    }
     const birthdayList = await Users.find();
     const today = moment().format("MM-DD");
 
