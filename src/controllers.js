@@ -33,7 +33,7 @@ export const checkBirthdaysForTelex = async (req, res)=>{
     if(birthdaysToday.length > 0){
       birthdaysToday.forEach(async (person)=>{
         message = `Hurray!🎉 It's ${person.name}'s birthday. Happy birthday ${person.name}, May God bless and keep you.`
-        await sendToChannel(message, return_url)
+        sendToChannel(message, return_url)
       })
       return res.status(400).json({status: "accepted"});
     } else{
