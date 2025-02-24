@@ -7,5 +7,5 @@ export const sendToChannel = async (message, return_url)=>{
     event_name: "Birthday Alert",
     status: "success"
   }
-  await axios.post(return_url, payload);
+  return await axios.post(return_url, payload);
 }

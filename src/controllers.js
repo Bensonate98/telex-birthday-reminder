@@ -10,8 +10,8 @@ export const integrationJsonContrl = (req, res)=>{
 
 export const checkBirthdaysForTelex = async (req, res)=>{
   try{
-    const { settings, return_url } = req.body;
-    if(!settings || !return_url){
+    const { settings, return_url, channel_id } = req.body;
+    if(!settings || !return_url || !channel_id){
       return res.status(400).json({error: "Invalid input"})
     }
     const allowedCronPattern = /^0 ([0-9]|1[0-9]|2[0-3]) \* \* \*$/;
@@ -31,17 +31,19 @@ export const checkBirthdaysForTelex = async (req, res)=>{
     
     let message;
     if(birthdaysToday.length > 0){
-      birthdaysToday.forEach(person=>{
+      birthdaysToday.forEach(async (person)=>{
         message = `Hurray!🎉 It's ${person.name}'s birthday. Happy birthday ${person.name}, May God bless and keep you.`
-        sendToChannel(message, return_url) 
+        await sendToChannel(message, return_url)
       })
+      return res.status(400).json({status: "accepted"});
     } else{
       message = "";
-      sendToChannel(message, return_url); 
+      sendToChannel(message, return_url);
+      return res.status(400).json({status: "accepted"});
     }
   }
   catch(err){
-    console.log(err);
+    return res.status(500).json({status: "error", message: "Internal server error"});
   }
 }
 
